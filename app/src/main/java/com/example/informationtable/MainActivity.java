@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity
         headersList.add("Salário");
         headersList.add("Gastos casa");
         headersList.add("Internet");
+        headersList.add("Teste");
+        headersList.add("Teste2");
 
         rccl_headers = (RecyclerView) findViewById(R.id.rccl_headers);
 
@@ -50,6 +52,8 @@ public class MainActivity extends AppCompatActivity
         valuesList.add("2122");
         valuesList.add("235");
         valuesList.add("150");
+        valuesList.add("400");
+        valuesList.add("950");
 
         rccl_values = (RecyclerView) findViewById(R.id.rccl_values);
 
