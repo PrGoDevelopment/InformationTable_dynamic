@@ -1,5 +1,6 @@
 package com.example.informationtable;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,32 +39,6 @@ public class TableAdapter_Headers extends RecyclerView.Adapter<TableAdapter_Head
         {
             holder.txt_header.setText(header_list.get(position));
 
-
-
-
-//            final String[] str = {"one","two","three","asdfgf"};
-//            final RelativeLayout rl = (RelativeLayout) holder.itemView.findViewById(R.id.rl);
-//            final TextView[] tv = new TextView[10];
-//
-//            for (int i=0; i<str.length; i++)
-//            {
-//                tv[i] = new TextView(ctx);
-//                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams
-//                        ((int) RelativeLayout.LayoutParams.WRAP_CONTENT,(int) RelativeLayout.LayoutParams.WRAP_CONTENT);
-//                params.leftMargin = 50;
-//                params.topMargin  = i*50;
-//                tv[i].setText(str[i]);
-//                tv[i].setTextSize((float) 20);
-//                tv[i].setPadding(20, 50, 20, 50);
-//                tv[i].setLayoutParams(params);
-//                rl.addView(tv[i]);
-//            }
-
-
-
-
-
-
         }else{
             return;
         }
@@ -80,6 +55,7 @@ public class TableAdapter_Headers extends RecyclerView.Adapter<TableAdapter_Head
         LinearLayout ll_mainLayoutTable;
 
 
+        @SuppressLint("UseCompatLoadingForDrawables")
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -87,27 +63,35 @@ public class TableAdapter_Headers extends RecyclerView.Adapter<TableAdapter_Head
             txt_valueTable = itemView.findViewById(R.id.txt_valueTable);
             ll_mainLayoutTable = itemView.findViewById(R.id.ll_mainLayoutTable);
 
-            RelativeLayout rl_main = (RelativeLayout) itemView.findViewById(R.id.rl_main);
 
+            final String[] str = {"235", "421", "570", "113", "1500", "230", "218", "550", "327", "730", "431", "200", "113", "1500", "230", "218", "550", "327", "730"};
+            final TextView[] tv = new TextView[str.length];
+            //int index = 0;
 
+            for (int i = 0; i < str.length; i++)
+            {
+                TextView tvw = new TextView(ctx);
+//                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams
+//                        ((int) RelativeLayout.LayoutParams.WRAP_CONTENT,(int) RelativeLayout.LayoutParams.WRAP_CONTENT);
+//                params.leftMargin = 50;
+//                params.topMargin  = i*50;
+                tvw.setText(str[i]);
+                tvw.setTextSize((float) 22);
+                tvw.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                tvw.setBackground(itemView.getResources().getDrawable(R.drawable.border_list));
 
-            for(int i = 0; i < 3; i++){
-                //rl_main.addView(txt_valueTable);
+                int finalIndex = i;
+                tvw.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(ctx.getApplicationContext(), "Você clicou no " + str[finalIndex] + " do " + txt_header.getText(), Toast.LENGTH_SHORT).show();
+                    }
+                });
 
-                TextView t = new TextView(ctx);
-
-                //ll_mainLayoutTable.addView(t);
-                rl_main.addView(t);
+//                tv[i].setPadding(20, 50, 20, 50);
+                //tv[i].setLayoutParams(txt_valueTable.getLayoutParams());
+                ll_mainLayoutTable.addView(tvw);
             }
-
-
-
-
-
-
-
-
-
 
 
             itemView.setOnClickListener(new View.OnClickListener() {

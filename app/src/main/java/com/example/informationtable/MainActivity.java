@@ -56,17 +56,17 @@ public class MainActivity extends AppCompatActivity
         valuesList.add("400");
         valuesList.add("950");
 
-        rccl_values = (RecyclerView) findViewById(R.id.rccl_values);
-
-        rccl_values.setHasFixedSize(true);
-        LinearLayoutManager layoutManager_Values = new LinearLayoutManager(this);
-        layoutManager_Values.setOrientation(LinearLayoutManager.HORIZONTAL);
-        rccl_values.setLayoutManager(layoutManager_Values);
-
-        /** TRANSFERE AS INFORMAÇÕES PARA O ADAPTADOR */
-        /** TRANSFER THE INFORMATION TO THE ADAPTER */
-        TableAdapter_Values adapterValues = new TableAdapter_Values(this, valuesList);
-
-        rccl_values.setAdapter(adapterValues);
+//        rccl_values = (RecyclerView) findViewById(R.id.rccl_values);
+//
+//        rccl_values.setHasFixedSize(true);
+//        LinearLayoutManager layoutManager_Values = new LinearLayoutManager(this);
+//        layoutManager_Values.setOrientation(LinearLayoutManager.HORIZONTAL);
+//        rccl_values.setLayoutManager(layoutManager_Values);
+//
+//        /** TRANSFERE AS INFORMAÇÕES PARA O ADAPTADOR */
+//        /** TRANSFER THE INFORMATION TO THE ADAPTER */
+//        TableAdapter_Values adapterValues = new TableAdapter_Values(this, valuesList);
+//
+//        rccl_values.setAdapter(adapterValues);
     }
 }
