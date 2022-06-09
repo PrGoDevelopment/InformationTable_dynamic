@@ -5,14 +5,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.widget.HorizontalScrollView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity
 {
-    RecyclerView rccl_headers, rccl_values;
+    RecyclerView rccl_headers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +24,8 @@ public class MainActivity extends AppCompatActivity
         headersList.add("Salário");
         headersList.add("Gastos casa");
         headersList.add("Internet");
-        headersList.add("Teste");
-        headersList.add("Teste2");
+//        headersList.add("Teste");
+//        headersList.add("Teste2");
 
         rccl_headers = (RecyclerView) findViewById(R.id.rccl_headers);
 
@@ -35,11 +34,7 @@ public class MainActivity extends AppCompatActivity
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         rccl_headers.setLayoutManager(layoutManager);
 
-        /** TRANSFERE AS INFORMAÇÕES PARA O ADAPTADOR */
-        /** TRANSFER THE INFORMATION TO THE ADAPTER */
-        TableAdapter_Headers adapter = new TableAdapter_Headers(this, headersList);
 
-        rccl_headers.setAdapter(adapter);
 
         // todo LOADING TABLE VALUES ---------------------------------------------------------------
         String[][] tableInformations = {
@@ -48,25 +43,22 @@ public class MainActivity extends AppCompatActivity
                 {"150", "150", "150", "150", "150", "150", "150", "150", "150", "150", "150", "150"}
         };
 
-        List<String> valuesList = new ArrayList<>();
 
-        valuesList.add("2122");
-        valuesList.add("235");
-        valuesList.add("150");
-        valuesList.add("400");
-        valuesList.add("950");
 
-//        rccl_values = (RecyclerView) findViewById(R.id.rccl_values);
+        //int s = tableInformations[0].length;
+
+//        String info = "";
 //
-//        rccl_values.setHasFixedSize(true);
-//        LinearLayoutManager layoutManager_Values = new LinearLayoutManager(this);
-//        layoutManager_Values.setOrientation(LinearLayoutManager.HORIZONTAL);
-//        rccl_values.setLayoutManager(layoutManager_Values);
-//
-//        /** TRANSFERE AS INFORMAÇÕES PARA O ADAPTADOR */
-//        /** TRANSFER THE INFORMATION TO THE ADAPTER */
-//        TableAdapter_Values adapterValues = new TableAdapter_Values(this, valuesList);
-//
-//        rccl_values.setAdapter(adapterValues);
+//        for(int i = 0; i < tableInformations[1].length; i++)
+//        {
+//            info = tableInformations[1][i];
+//        }
+
+
+        /** TRANSFERE AS INFORMAÇÕES PARA O ADAPTADOR */
+        /** TRANSFER THE INFORMATION TO THE ADAPTER */
+        TableAdapter adapter = new TableAdapter(this, headersList, tableInformations);
+
+        rccl_headers.setAdapter(adapter);
     }
 }

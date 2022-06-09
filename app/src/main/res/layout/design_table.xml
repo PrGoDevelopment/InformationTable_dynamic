@@ -17,17 +17,9 @@
             android:layout_height="wrap_content"
             android:text="Title"
             android:textSize="26sp"
-            android:background="@drawable/border_list"
+            android:background="@drawable/border_table"
             android:textAlignment="center"/>
 
-        <TextView
-            android:id="@+id/txt_valueTable"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="value"
-            android:textSize="22sp"
-            android:background="@drawable/border_list"
-            android:textAlignment="center" />
     </LinearLayout>
 
 </RelativeLayout>
