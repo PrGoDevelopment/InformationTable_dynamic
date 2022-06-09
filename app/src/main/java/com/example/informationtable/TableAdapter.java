@@ -56,6 +56,7 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.ViewHolder>
                 tvw.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 tvw.setBackground(holder.itemView.getResources().getDrawable(R.drawable.border_table));
 
+                /** PARA CLICAR EM CADA CELULA */
                 int finalIndex = i;
                 tvw.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -90,7 +91,7 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.ViewHolder>
             txt_header = itemView.findViewById(R.id.txt_header);
             ll_mainLayoutTable = itemView.findViewById(R.id.ll_mainLayoutTable);
 
-
+            /** PARA CLICAR EM CADA COLUNA, ATRAVÉZ DOS TÍTULOS */
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

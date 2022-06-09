@@ -18,42 +18,28 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // todo LOADING READERS --------------------------------------------------------------------
+        // todo CARREGANDO TÍTULOS -----------------------------------------------------------------
         List<String> headersList = new ArrayList<>();
 
-        headersList.add("Salário");
-        headersList.add("Gastos casa");
-        headersList.add("Internet");
-//        headersList.add("Teste");
-//        headersList.add("Teste2");
+        headersList.add("Coluna 1");
+        headersList.add("Coluna 2");
+        headersList.add("Coluna 3");
+        headersList.add("Coluna 4");
 
+        /** AJUSTES DO RECYCLERVIEW */
         rccl_headers = (RecyclerView) findViewById(R.id.rccl_headers);
-
         rccl_headers.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         rccl_headers.setLayoutManager(layoutManager);
 
-
-
-        // todo LOADING TABLE VALUES ---------------------------------------------------------------
+        // todo CARREGANDO VALORES DAS CÉLULAS DA TABELA -------------------------------------------
         String[][] tableInformations = {
-                {"2122", "2122", "2122", "2122", "2122", "2122", "2122", "2122", "2122", "2122", "2122", "2122"},
-                {"235", "421", "570", "113", "1500", "230", "218", "550", "327", "730", "431", "200"},
-                {"150", "150", "150", "150", "150", "150", "150", "150", "150", "150", "150", "150"}
+                {"2568", "3254", "568", "2122", "135", "2122"},
+                {"235", "421", "570", "113", "1500", "230"},
+                {"150", "150", "25", "48", "150", "999"},
+                {"336", "478", "7858", "789", "222", "78"}
         };
-
-
-
-        //int s = tableInformations[0].length;
-
-//        String info = "";
-//
-//        for(int i = 0; i < tableInformations[1].length; i++)
-//        {
-//            info = tableInformations[1][i];
-//        }
-
 
         /** TRANSFERE AS INFORMAÇÕES PARA O ADAPTADOR */
         /** TRANSFER THE INFORMATION TO THE ADAPTER */
