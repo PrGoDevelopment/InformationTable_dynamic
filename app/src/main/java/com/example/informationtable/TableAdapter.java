@@ -40,17 +40,11 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.ViewHolder>
         {
             holder.txt_header.setText(header_list.get(position));
 
-//            final String[] str = {"235", "421", "570", "113", "1500", "230", "218", "550", "327", "730", "431", "200"};
-//            final TextView[] tv = new TextView[str.length];
-            //int index = 0;
 
             for (int i = 0; i < tableInformations[position].length; i++)
             {
                 TextView tvw = new TextView(ctx);
-//                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams
-//                        ((int) RelativeLayout.LayoutParams.WRAP_CONTENT,(int) RelativeLayout.LayoutParams.WRAP_CONTENT);
-//                params.leftMargin = 50;
-//                params.topMargin  = i*50;
+
                 tvw.setText(tableInformations[position][i]);
                 tvw.setTextSize((float) 22);
                 tvw.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
@@ -65,8 +59,6 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.ViewHolder>
                     }
                 });
 
-//                tv[i].setPadding(20, 50, 20, 50);
-                //tv[i].setLayoutParams(txt_valueTable.getLayoutParams());
                 holder.ll_mainLayoutTable.addView(tvw);
             }
 
